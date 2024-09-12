@@ -49,7 +49,7 @@ class EMA:
         else:
             return old*self.beta + (1 - self.beta)*new
     def step_ema(self, ema_model, model, step_start_ema = 2000):
-        if self.step < self.step_ema:
+        if self.step < step_start_ema:
             self.reset_parameters(ema_model, model)
             self.step +=1
             return
